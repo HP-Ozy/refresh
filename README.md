@@ -16,13 +16,13 @@ Download the ZIP, then run `install.ps1` (Windows) or `install.sh` (macOS/Linux)
 
 ## refresh vs `/compact`
 
-`/compact` summarizes the conversation **in place** — same session, same window. `refresh` writes a handoff, you `/clear`, and you resume in a genuinely empty context.
+`/compact` summarizes the conversation in place: same session, same window. `refresh` writes a handoff, you `/clear`, and you resume in an empty context.
 
-* **Real reset, not a rolling summary.** `/compact` keeps the accumulated noise (old tool output, dead ends) inside its summary. `refresh` + `/clear` restarts from a clean window and reloads only the handoff.
-* **You control what survives.** The handoff is a file you can read, edit, and verify before resuming. `/compact` you trust blindly.
+* **Real reset, not a rolling summary.** `/compact` keeps the accumulated noise (old tool output, dead ends) inside its summary. `refresh` plus `/clear` restarts from a clean window and reloads only the handoff.
+* **You control what survives.** The handoff is a file you can read, edit, and verify before resuming.
 * **It persists on disk.** `latest.md` stays after the session ends; a compacted context lives only inside the session.
 
-Trade-off, stated honestly: `refresh` is a 3-step manual flow (capture → `/clear` → resume), while `/compact` is one command. See [Limitations](#limitations).
+Trade-off: `refresh` is a 3-step manual flow (capture, `/clear`, resume), while `/compact` is one command. See [Limitations](#limitations).
 
 ## Usage
 
@@ -108,11 +108,11 @@ and:
 
 ## Verified
 
-Not just a claim. The [`evals/`](evals/) folder has an A/B protocol that measures whether the handoff actually preserves the thread across a `/clear`:
+The [`evals/`](evals/) folder has an A/B protocol that measures whether the handoff preserves the thread across a `/clear`:
 
-* [`probe.md`](evals/probe.md) — the task given to Claude
-* [`answer-key.md`](evals/answer-key.md) — the scoring grid (thread retention + answer quality)
-* [`test-protocol.md`](evals/test-protocol.md) — how to run the A/B comparison in a clean session
+* [`probe.md`](evals/probe.md): the task given to Claude
+* [`answer-key.md`](evals/answer-key.md): the scoring grid (thread retention and answer quality)
+* [`test-protocol.md`](evals/test-protocol.md): how to run the A/B comparison in a clean session
 
 ## Goal
 
