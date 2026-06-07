@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-# Installa la skill "refresh" per Claude Code (macOS / Linux)
-# Uso:  bash install.sh   (dalla cartella del progetto)
 set -euo pipefail
 
 SRC="$(cd "$(dirname "$0")" && pwd)"
