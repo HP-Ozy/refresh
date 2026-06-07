@@ -10,6 +10,20 @@ Capture the important state of your current work, start a fresh session, then co
 
 Instead of continuing inside a degraded session, capture the current state, clear the context, and resume from a structured handoff.
 
+## Install
+
+Download the ZIP, then run `install.ps1` (Windows) or `install.sh` (macOS/Linux). Full steps in [INSTALL.md](INSTALL.md). Then type `/refresh` inside Claude Code.
+
+## refresh vs `/compact`
+
+`/compact` summarizes the conversation **in place** — same session, same window. `refresh` writes a handoff, you `/clear`, and you resume in a genuinely empty context.
+
+* **Real reset, not a rolling summary.** `/compact` keeps the accumulated noise (old tool output, dead ends) inside its summary. `refresh` + `/clear` restarts from a clean window and reloads only the handoff.
+* **You control what survives.** The handoff is a file you can read, edit, and verify before resuming. `/compact` you trust blindly.
+* **It persists on disk.** `latest.md` stays after the session ends; a compacted context lives only inside the session.
+
+Trade-off, stated honestly: `refresh` is a 3-step manual flow (capture → `/clear` → resume), while `/compact` is one command. See [Limitations](#limitations).
+
 ## Usage
 
 ```bash
@@ -91,6 +105,14 @@ and:
 ```bash
 /refresh resume
 ```
+
+## Verified
+
+Not just a claim. The [`evals/`](evals/) folder has an A/B protocol that measures whether the handoff actually preserves the thread across a `/clear`:
+
+* [`probe.md`](evals/probe.md) — the task given to Claude
+* [`answer-key.md`](evals/answer-key.md) — the scoring grid (thread retention + answer quality)
+* [`test-protocol.md`](evals/test-protocol.md) — how to run the A/B comparison in a clean session
 
 ## Goal
 
