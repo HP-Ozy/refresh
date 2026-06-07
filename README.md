@@ -8,22 +8,6 @@ But a simple `/clear` also wipes out valuable context.
 `refresh` gives you the best of both worlds.
 Capture the important state of your current work, start a fresh session, then continue exactly where you left off.
 
-📦 **Installation:** see [INSTALL.md](INSTALL.md).
-Download the ZIP and run `install.ps1` on Windows or `install.sh` on macOS/Linux.
-Then type `/refresh` inside Claude Code.
-
-## Why
-
-The problem isn't the model.
-The problem is the session.
-As conversations grow, context becomes increasingly noisy. Even strong models can begin to:
-
-* repeat themselves
-* lose track of previous decisions
-* miss important constraints
-* generate less focused responses
-* spend context on outdated information
-
 Instead of continuing inside a degraded session, capture the current state, clear the context, and resume from a structured handoff.
 
 ## Usage
