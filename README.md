@@ -14,7 +14,7 @@ Instead of continuing inside a degraded session, capture the current state, clea
 
 Download the ZIP, then run `install.ps1` (Windows) or `install.sh` (macOS/Linux). Full steps in [INSTALL.md](INSTALL.md). Then type `/refresh` inside Claude Code.
 
-## /refresh vs `/compact`
+## `/refresh` vs `/compact`
 
 `/compact` summarizes the conversation in place: same session, same window. `refresh` writes a handoff, you `/clear`, and you resume in an empty context.
 
