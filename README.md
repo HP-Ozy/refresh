@@ -1,6 +1,6 @@
 # refresh
 
-> 📦 **Installazione (anche per non esperti):** vedi **[INSTALL.md](INSTALL.md)**.
+> 📦 **Installazione:** vedi **[INSTALL.md](INSTALL.md)**.
 > In breve: scarica lo ZIP e lancia `install.ps1` (Windows) o `install.sh` (macOS/Linux),
 > poi scrivi `/refresh` in Claude Code.
 
